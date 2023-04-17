@@ -32,10 +32,6 @@ for(var i = 0; i < add.length; i++) {
 
         }
 
-
-
-
-
         var plus = document.querySelectorAll("#plus");
         for(var k = 0; k < plus.length; k++) {
             plus[k].onclick = function() {
