@@ -10,7 +10,7 @@ body {
         #f15e1f
     );
     height: 100vh;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     margin: 20px 0;
@@ -24,6 +24,12 @@ body {
     align-items: center;
     flex-wrap: wrap;
     margin-top: 150px
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    color:#f15e1f;
 }
 
 .fruit {
@@ -69,7 +75,7 @@ img {
     width: 20%;
     height: 350px;
     background-color: #ffffff;
-    border:none;
+    border:10px solid #ecea81;
     border-radius: 25px;
     margin-left: 20px;
     overflow: auto;
