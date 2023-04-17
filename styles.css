@@ -42,19 +42,19 @@ img {
     width: 150px;
     height: 200px;
     background: none;
-    border: none;
+    border: 10px solid #ecea81;
     border-radius: 25px;
 }
 
 .add {
-    border: none;
     border-radius: 25px;
     width: 40%;
     height: 25px;
     margin-top:5px;
     font-size:20px;
     font-weight: bold;
-    color: #e2a10a
+    color: #e2a10a;
+    border: 3px solid #ecea81;
 }
 
 .add:hover{
@@ -115,11 +115,20 @@ img {
 
 .listname {
     width: 70%;
-    color: #e3a107;
-    font-size: 30px;
+    color: #cfa40a;
+    font-size: 20px;
     font-weight: bold;
 }
 
-.delete {
-    width: 15%;
+
+.delete, #plus, #minus, #quantity{
+    font-size: 20px;
+    font-weight: bold;
+    color: #f15e1f;
+    background: rgba(234, 231, 190, 0.75);
+    border:none;
+    border-radius: 25px;
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
 }

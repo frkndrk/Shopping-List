@@ -2,7 +2,7 @@ const add = document.querySelectorAll(".add");
 for(var i = 0; i < add.length; i++) {
     add[i].onclick = function() {
         const value = this.parentNode.childNodes[3].textContent;
-        
+
         document.querySelector(".shoplist").innerHTML
         +=
         `
@@ -18,6 +18,11 @@ for(var i = 0; i < add.length; i++) {
                 </button>
             </div>
         `;
+
+        var listname = document.querySelectorAll(".listname").innerText;
+        console.log(listname);
+
+
 
         var plus = document.querySelectorAll("#plus");
         for(var k = 0; k < plus.length; k++) {
