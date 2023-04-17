@@ -1,0 +1,125 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(
+        to right,
+        #ecea81,
+        #f15e1f
+    );
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    
+}
+
+.container {
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 150px
+}
+
+.fruit {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.fruit p {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+img {
+    width: 150px;
+    height: 200px;
+    background: none;
+    border: none;
+    border-radius: 25px;
+}
+
+.add {
+    border: none;
+    border-radius: 25px;
+    width: 40%;
+    height: 25px;
+    margin-top:5px;
+    font-size:20px;
+    font-weight: bold;
+    color: #e2a10a
+}
+
+.add:hover{
+    background-color: #f0dfdf;
+}
+
+.add:active {
+    background-color: #f5bf0e;
+}
+
+.sepet {
+    width: 20%;
+    height: 350px;
+    background-color: #ffffff;
+    border:none;
+    border-radius: 25px;
+    margin-left: 20px;
+    overflow: auto;
+}
+
+.top-sepet-head {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px;
+}
+
+#sepet-head {
+    color: #ea8e04;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+#icon {
+    color: #ea8e04;
+    font-size: 30px;
+}
+
+.shoplist{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.list-item {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px 10px;
+    
+}
+
+
+.listname {
+    width: 70%;
+    color: #e3a107;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.delete {
+    width: 15%;
+}
