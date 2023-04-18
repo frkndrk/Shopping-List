@@ -3,9 +3,19 @@ for(var i = 0; i < add.length; i++) {
     add[i].onclick = function() {
         const value = this.parentNode.childNodes[3].textContent;
         let input = document.querySelector(".mainBox .urun #urunAdi").parentNode.childNodes[1].value;
-        console.log(input);
         let fruit = document.querySelector('.shoplist').innerHTML.includes(value);
-        let price = this.parentNode.childNodes[5].firstChild.textContent;
+        let thisValue = this;
+
+        let products = {
+            Ekmek: 5,
+            Su: 13,
+            Un: 20,
+            Şeker: 30
+        };
+
+        let priceInput = products[input];
+        console.log(priceInput);
+
         if(fruit){
             let sepet = document.querySelectorAll(".sepet .list-item .listname");
             for(var i = 0; i < sepet.length; i++) {
@@ -20,13 +30,13 @@ for(var i = 0; i < add.length; i++) {
                         count;
                     }
                     element.innerHTML = count;
-                    tutarlar = tutarlar * count;
 
                 }
             }
         } 
         else if(input == "" && fruit == false){
-            
+        let price = thisValue.parentNode.childNodes[5].firstChild.textContent;
+        console.log(price);
         document.querySelector(".shoplist").innerHTML
         +=
         `
@@ -49,7 +59,7 @@ for(var i = 0; i < add.length; i++) {
             `
                 <div class="list-item">
                     <span class="listname">${input}</span>
-                    <label class="tutar" id="fiyat">${price}</label>
+                    <label class="tutar" id="fiyat">${priceInput}</label>
                     <label class="count" id="quantity">1</label>
                     <button id="plus">+</button>
                     <button id="minus">-</button>
