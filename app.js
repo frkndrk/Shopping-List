@@ -2,10 +2,11 @@ const add = document.querySelectorAll(".add");
 for(var i = 0; i < add.length; i++) {
     add[i].onclick = function() {
         const value = this.parentNode.childNodes[3].textContent;
+        let input = document.querySelector(".mainBox .urun #urunAdi").parentNode.childNodes[1].value;
         let fruit = document.querySelector('.shoplist').innerHTML.includes(value);
+
         if(fruit){
             let sepet = document.querySelectorAll(".sepet .list-item .listname");
-            console.log(sepet);
             for(var i = 0; i < sepet.length; i++) {
                 let element = sepet[i].parentNode.querySelector(".count");
                 var count = parseInt(element.innerHTML);
@@ -14,7 +15,8 @@ for(var i = 0; i < add.length; i++) {
                     element.innerHTML = count;
                 }
             }
-        } else {
+        } 
+        else if(input == "" && fruit == false){
             
         document.querySelector(".shoplist").innerHTML
         +=
@@ -30,6 +32,23 @@ for(var i = 0; i < add.length; i++) {
             </div>
         `;
 
+        } 
+        else if(input != "") {
+            document.querySelector(".shoplist").innerHTML
+            +=
+            `
+                <div class="list-item">
+                    <span class="listname">${input}</span>
+                    <label class="count" id="quantity">1</label>
+                    <button id="plus">+</button>
+                    <button id="minus">-</button>
+                    <button class="delete">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            `;
+            document.querySelector("#urunAdi").value = "";
+            
         }
 
         var plus = document.querySelectorAll("#plus");
@@ -62,10 +81,5 @@ for(var i = 0; i < add.length; i++) {
             }
         }
     }
+
 }
-
-
-
-
-
-
