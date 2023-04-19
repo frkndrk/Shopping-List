@@ -14,29 +14,32 @@ for(var i = 0; i < add.length; i++) {
         };
 
         let priceInput = products[input];
-        console.log(priceInput);
+
+        
 
         if(fruit){
             let sepet = document.querySelectorAll(".sepet .list-item .listname");
             for(var i = 0; i < sepet.length; i++) {
                 let element = sepet[i].parentNode.querySelector(".count");
                 let tutar = sepet[i].parentNode.querySelector(".tutar");
-                var count = parseInt(element.innerHTML);
-                var tutarlar = parseInt(tutar.innerHTML);
+                let count = parseInt(element.innerHTML);
+                let tutarlar = parseInt(tutar.innerHTML);
                 if(count < 10) {
                     if(sepet[i].innerHTML == value) {
                         count = count + 1;
+                        tutarlar = (tutarlar * count) / (count - 1);
                     } else {
                         count;
                     }
                     element.innerHTML = count;
+                    tutar.innerHTML = tutarlar;
 
                 }
             }
+            
         } 
         else if(input == "" && fruit == false){
         let price = thisValue.parentNode.childNodes[5].firstChild.textContent;
-        console.log(price);
         document.querySelector(".shoplist").innerHTML
         +=
         `
@@ -75,23 +78,35 @@ for(var i = 0; i < add.length; i++) {
         var plus = document.querySelectorAll("#plus");
         for(var k = 0; k < plus.length; k++) {
             plus[k].onclick = function() {
+                let tutar = this.parentNode.childNodes[3];
+                let tutarlar = parseInt(tutar.innerHTML);
                 if(this.parentNode.childNodes[5].textContent < 10) {
-                    this.parentNode.childNodes[5].textContent++;
+                    let quantity = (this.parentNode.childNodes[5].textContent++) + 1;
+                    tutarlar = (tutarlar * quantity) / (quantity - 1);
+                    
                 } else {
-                    this.parentNode.childNodes[5].textContent = 10;
+                    quantity = 10;
                     alert("Maksimum 10 adet alabilirsiniz!");
+                    
                 }
+                tutar.innerHTML = tutarlar;
             }
         }
 
         var minus = document.querySelectorAll("#minus");
         for(var l = 0; l < minus.length; l++) {
             minus[l].onclick = function() {
+                let tutar = this.parentNode.childNodes[3];
+                let tutarlar = parseInt(tutar.innerHTML);
+                
                 if(this.parentNode.childNodes[5].textContent > 1) {
-                    this.parentNode.childNodes[5].textContent--;
+                    let quantity = (this.parentNode.childNodes[5].textContent--);
+                    tutarlar = tutarlar - (tutarlar/quantity);
+                    
                 } else if(this.parentNode.childNodes[5].textContent == 1) {
                     this.parentNode.remove();
                 }
+                tutar.innerHTML = tutarlar;
             }
         }
 
